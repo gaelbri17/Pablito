@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+/*import frmLogin;*/
+
 
 
 public class frmRegistrarse extends javax.swing.JPanel {
@@ -127,8 +129,13 @@ public class frmRegistrarse extends javax.swing.JPanel {
 
             
             System.out.println("Registro exitoso");
+            
+            //Abrir el nuevo formulario de login
+            /*            frmLogin loginForm = new frmLogin();
+            loginForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            loginForm.pack();
+            loginForm.setVisible(true);*/
 
-           
 
         }
     } catch (SQLException ex) {
