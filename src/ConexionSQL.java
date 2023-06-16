@@ -15,7 +15,7 @@ public class ConexionSQL {
     public static Connection getConexion(){
         
      
-        String conexionUrl  = "jdbc:sqlserver://localhost:1433;" 
+        String conexionUrl  = "jdbc:sqlserver://localhost:56228;" 
                             + "databaseName=EmpresaRegalos;" 
                             + "user=sa;"
                             + "password=Itr2023!;" 

@@ -124,17 +124,12 @@ public class frmRegistrarse extends javax.swing.JPanel {
             stmt.setString(5, apellidos);
             stmt.setString(6, celular);
 
-            // Ejecuta la consulta ._.
             stmt.executeUpdate();
 
             
             System.out.println("Registro exitoso");
             
-            //Abrir el nuevo formulario de login
-            /*            frmLogin loginForm = new frmLogin();
-            loginForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            loginForm.pack();
-            loginForm.setVisible(true);*/
+
 
 
         }
