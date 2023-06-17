@@ -1,4 +1,5 @@
 
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -76,6 +77,12 @@ public class frmRegistrarse extends javax.swing.JPanel {
         jlbCelular.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jlbCelular.setText("Celular:");
         jPanel1.add(jlbCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
+
+        txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCelularKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 200, 30));
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 200, 30));
 
@@ -85,7 +92,7 @@ public class frmRegistrarse extends javax.swing.JPanel {
                 btnRegistrarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 160, 40));
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -138,6 +145,23 @@ public class frmRegistrarse extends javax.swing.JPanel {
         System.out.println("Error al registrar usuario: " + ex.getMessage());
     }
     }//GEN-LAST:event_btnRegistrarMouseClicked
+
+    private void txtCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyPressed
+  
+    char c = evt.getKeyChar();
+    
+    if (!Character.isDigit(c) && c != '-') {
+        if (c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            evt.consume(); 
+        }
+    }
+   
+    String text = txtCelular.getText();
+    if (text.length() >= 9 && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+        evt.consume();
+    }
+    
+    }//GEN-LAST:event_txtCelularKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
